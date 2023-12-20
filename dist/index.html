@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./jquery/dist/jquery.js" defer></script>
+    <script src="./handlebars/dist/handlebars.js" defer></script>
+    <script src="APIManager.js" defer></script>
+    <script src="Renderer.js" defer></script>
+    <script src="main.js" defer></script>
+  <link rel="stylesheet" href="styles.css">
+  <title>Recipes</title>
+</head>
+<body>
+  <div class="search-container">
+    <input type="text" id="recipe-search" placeholder="Search for a recipe..."> 
+    <button id="search-button" onclick=getResults()>Search Recipe</button>
+  </div>
+  <div class="recipe-grid">
+    
+  </div>
+  <script id = "recipe-template" type="text/x-handlebars-template">
+    {{#each filteredResults}}
+  <div class = "recipe-card">
+    <a href="{{href}}">{{title}}</a>
+    <img src="{{thumbnail}}" alt="Recipe Image">
+    <ol>
+      {{#each ingredients}}
+      <li>{{this}}</li>
+      {{/each}}
+    </ol>
+  </div>
+  {{/each}}
+  </script>
+</body>
+</html>

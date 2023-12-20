@@ -1,0 +1,100 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.search-container {
+  text-align: center;
+  margin: 20px;
+}
+
+#recipe-search {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 5px;
+  transition: border-color 0.3s;
+}
+
+#recipe-search:focus {
+  border-color: #4CAF50;
+}
+
+#search-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#search-button:hover {
+  background-color: #45a049;
+}
+
+.recipe-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20px;
+  margin: 20px;
+}
+
+.recipe-card {
+  max-width: 300px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ddd;
+  text-align: center;
+  border-radius: 8px;
+  transition: box-shadow 0.3s;
+}
+
+.recipe-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+
+.recipe-card a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 18px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.recipe-card img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.recipe-card:hover img {
+  transform: scale(1.1);
+}
+
+.recipe-card ol {
+  list-style-type: none;
+  padding: 0;
+}
+
+.recipe-card li {
+  font-size: 14px;
+  margin-bottom: 8px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.recipe-card:hover li {
+  opacity: 1;
+  transform: translateY(0);
+}
