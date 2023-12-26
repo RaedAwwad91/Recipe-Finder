@@ -43,6 +43,8 @@ body {
   justify-content: space-evenly;
   gap: 20px;
   margin: 20px;
+  flex-direction: column;
+  align-items: center;
 }
 
 .recipe-card {
@@ -97,4 +99,28 @@ body {
 .recipe-card:hover li {
   opacity: 1;
   transform: translateY(0);
+}
+
+.horizontal-list {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+
+.horizontal-list li {
+  margin-right: 10px;
+}
+
+.inpt-checkbox-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.allergy-options{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }

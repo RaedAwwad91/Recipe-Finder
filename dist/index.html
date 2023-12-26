@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="SenstivityUltities.js" defer></script>
+  <script src="./config/consts.js" defer></script>
   <script src="./jquery/dist/jquery.js" defer></script>
     <script src="./handlebars/dist/handlebars.js" defer></script>
     <script src="APIManager.js" defer></script>
@@ -13,13 +15,22 @@
 </head>
 <body>
   <div class="search-container">
-    <input type="text" id="recipe-search" placeholder="Search for a recipe..."> 
-    <button id="search-button" onclick=getResults()>Search Recipe</button>
+    <div class="inpt-checkbox-container">
+      <div>
+        <input type="text" id="recipe-search" placeholder="Search for a recipe...">
+        <button id="search-button" onclick=getResults()>Search Recipe</button>
+      </div>
+      <div class="allergies-container">
+
+      </div>
+ 
+    </div>
   </div>
   <div class="recipe-grid">
     
   </div>
   <script id = "recipe-template" type="text/x-handlebars-template">
+  <p>Total Recipes: {{totalRecipes}}</p>
     {{#each filteredResults}}
   <div class = "recipe-card">
     <a href="{{href}}">{{title}}</a>
@@ -32,5 +43,17 @@
   </div>
   {{/each}}
   </script>
+
+  <script id="allergies-template" type="text/x-handlebars-template">
+    <div class="allergy-options">
+      {{#each allergies}}
+        <div class="allergy-group">
+          <label for="{{this.name}}-checkbox">{{this.name}} Allergy:</label>
+          <input type="checkbox" id="{{this.name}}-checkbox" name="allergies" value="{{this.name}}">
+        </div>
+      {{/each}}
+    </div>
+  </script>
+  
 </body>
 </html>
